@@ -6,6 +6,7 @@ import Pagination from '~/components/Pagination.astro'
 import siteConfig from '~/site.config'
 import PostPreview from '~/components/PostPreview.astro'
 import PageHeader from '~/components/PageHeader.astro'
+import { formatPagedTitle, uiText } from '~/i18n'
 
 // Note: Pagination like '/', '/2', '/3' only works with spread param like [...page]
 export const getStaticPaths = (async ({ paginate }) => {
@@ -14,18 +15,18 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths
 
 const { page } = Astro.props
-const pageTitle = 'Archive' + (page.currentPage > 1 ? ` - Page ${page.currentPage}` : '')
+const pageTitle = formatPagedTitle(uiText.common.allPosts, page.currentPage)
 ---
 
-<Layout title={pageTitle} description="All posts in the archive">
+<Layout title={pageTitle} description={uiText.descriptions.allPosts}>
   <div class="mt-2 sm:mt-0">
-    <PageHeader />
+    <PageHeader title="Archive" page={page.currentPage} />
     {page.data.map((post) => <PostPreview post={post} />)}
     <Pagination
       prevLink={page.url.prev ? page.url.prev : undefined}
-      prevText="Newer Posts"
+      prevText={uiText.common.newerPosts}
       nextLink={page.url.next ? page.url.next : undefined}
-      nextText="Older Posts"
+      nextText={uiText.common.olderPosts}
     />
   </div>
 </Layout>

@@ -16,6 +16,7 @@ import ScrollUpButton from '~/components/ScrollUpButton.astro'
 import type { Collation } from '~/types'
 import ChevronsRight from '~/icons/chevrons-right.svg'
 import { getPostSequenceContext } from '~/utils'
+import { uiText } from '~/i18n'
 
 export const getStaticPaths = (async () => {
   const posts = await getSortedPosts()
@@ -113,7 +114,7 @@ if (postData.tags && postData.tags.length > 0) {
         href={`/posts/${nextPostInSeries.id}`}
         class="button justify-center -mt-8 mb-8 !whitespace-normal text-center flex gap-2 sm:gap-3 items-center"
       >
-        <span>Next: {nextPostInSeries.data.title}</span>
+        <span>{uiText.common.nextPost}：{nextPostInSeries.data.title}</span>
         <ChevronsRight class="size-5 hidden sm:block" />
       </a>
     )
@@ -128,14 +129,14 @@ if (postData.tags && postData.tags.length > 0) {
   {
     showSeries && series ? (
       <section>
-        <DividerText text={`${series.title} Series`} />
+        <DividerText text={`${series.title} 系列`} />
         {series.entries.map((seriesPost) => (
           <PostPreview post={seriesPost} />
         ))}
       </section>
     ) : prev || next ? (
       <section>
-        <DividerText text="More Posts" />
+        <DividerText text={uiText.common.morePosts} />
         {prev && <PostPreview post={prev} />}
         {next && <PostPreview post={next} />}
       </section>
@@ -144,7 +145,7 @@ if (postData.tags && postData.tags.length > 0) {
   {
     siteConfig.giscus && (
       <section>
-        <DividerText text="Comments" />
+        <DividerText text={uiText.common.comments} />
         <GiscusLoader />
       </section>
     )

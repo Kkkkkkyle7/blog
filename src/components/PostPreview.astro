@@ -1,4 +1,5 @@
 ---
+import { uiText } from '~/i18n'
 import IconChevronsRight from '~/icons/chevrons-right.svg'
 import type { CollectionEntry } from 'astro:content'
 import { render } from 'astro:content'
@@ -39,7 +40,7 @@ const articleLink = samePage ? `#${post.id}` : `/posts/${post.id}`
   }
   <div>
     <a class="button flex items-center !pl-3.5" href={articleLink}>
-      {samePage ? 'Continue' : 'Read'}
+      {samePage ? uiText.common.continueReading : uiText.common.readMore}
       <IconChevronsRight class="size-5 ml-2" />
     </a>
   </div>

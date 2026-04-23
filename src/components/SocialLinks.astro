@@ -3,7 +3,6 @@ import type { SocialLinks } from '~/types'
 import IconGithub from '~/icons/github.svg'
 import IconMastodon from '~/icons/mastodon.svg'
 import IconTwitter from '~/icons/twitter.svg'
-import IconLinkedin from '~/icons/linkedin.svg'
 import IconBluesky from '~/icons/bluesky.svg'
 import IconEmail from '~/icons/email.svg'
 import IconRss from '~/icons/rss.svg'
@@ -52,19 +51,6 @@ const { socialLinks } = Astro.props
       >
         <span class="sr-only">Twitter</span>
         <IconTwitter class="size-7" />
-      </a>
-    )
-  }
-  {
-    socialLinks.linkedin && (
-      <a
-        href={socialLinks.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="social-link"
-      >
-        <span class="sr-only">LinkedIn</span>
-        <IconLinkedin class="size-7" />
       </a>
     )
   }

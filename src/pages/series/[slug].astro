@@ -4,6 +4,7 @@ import Layout from '~/layouts/Layout.astro'
 import { SeriesGroup } from '~/utils'
 import PageHeader from '~/components/PageHeader.astro'
 import PostPreview from '~/components/PostPreview.astro'
+import { uiText } from '~/i18n'
 
 export const getStaticPaths = (async () => {
   const seriesGroup = await SeriesGroup.build()
@@ -20,10 +21,10 @@ const { posts, seriesTitle } = Astro.props
 
 <Layout
   title={`Series: ${seriesTitle}`}
-  description={`All posts in the ${seriesTitle} series`}
+  description={uiText.descriptions.seriesPosts(seriesTitle)}
 >
   <div class="mt-2 sm:mt-0">
-    <PageHeader titlePieces={['series', seriesTitle]} />
+    <PageHeader title="Series" subtitle={seriesTitle} />
     {posts.map((post) => <PostPreview post={post} />)}
   </div>
 </Layout>

@@ -10,7 +10,7 @@ interface Props {
 
 const { post, class: className } = Astro.props
 const { remarkPluginFrontmatter } = await render(post)
-const { minutesRead } = remarkPluginFrontmatter
+const { minutesRead, wordCount } = remarkPluginFrontmatter
 const seriesFrontmatter = post.data.series
 let series: Collation<'posts'> | undefined
 let seriesPostNumber: number | undefined
@@ -54,6 +54,13 @@ if (seriesFrontmatter) {
         minutesRead && (
           <span class="before:content-['·'] before:inline-block before:mx-0.5">
             {minutesRead}
+          </span>
+        )
+      }
+      {
+        wordCount && (
+          <span class="before:content-['·'] before:inline-block before:mx-0.5">
+            {wordCount}
           </span>
         )
       }

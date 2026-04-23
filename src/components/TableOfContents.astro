@@ -1,4 +1,5 @@
 ---
+import { uiText } from '~/i18n'
 import type { MarkdownHeading } from 'astro'
 import TOCHeading from '~/components/TableOfContentsHeading.astro'
 
@@ -17,7 +18,7 @@ const filteredHeadings = headings.filter(({ depth }) => depth >= 2 && depth <= 3
 >
   <summary
     class="list-none marker:hidden marker:content-[''] before:content-['>'] before:text-accent before:font-semibold before:absolute before:left-3 cursor-pointer"
-    >Table of Contents</summary
+    >{uiText.common.tableOfContents}</summary
   >
   <nav class="w-full text-sm xl:-ml-1">
     <ul class="mt-4 flex flex-col max-w-full">
