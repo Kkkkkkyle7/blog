@@ -3,16 +3,16 @@ import { uiText } from './i18n'
 
 const config: SiteConfig = {
   // Absolute URL to the root of your published site, used for generating links and sitemaps.
-  site: 'https://multiterm.stelclementine.com',
+  site: 'https://kyleblog-gamma.vercel.app',
   // The name of your site, used in the title and for SEO.
   title: 'Kyle\'s Blog',
   // The description of your site, used for SEO and RSS feed.
   description:
-    'A coder-ready Astro blog theme with 59 of your favorite color schemes to choose from',
+    'Kyle 的个人博客，记录强化学习、机器学习与编程学习中的笔记和思考。',
   // The author of the site, used in the footer, SEO, and RSS feed.
   author: 'kkkkkkkyle',
   // Keywords for SEO, used in the meta tags.
-  tags: ['Astro', 'Terminal', 'Theme', 'MultiTerm', 'stelcodes'],
+  tags: ['Kyle', '强化学习', '机器学习', '编程', '技术博客'],
   // Path to the image used for generating social media previews.
   // Needs to be a square JPEG file due to limitations of the social card generator.
   // Try https://squoosh.app/ to easily convert images to JPEG.
@@ -153,8 +153,7 @@ const config: SiteConfig = {
   // Social links to display in the footer.
   socialLinks: {
     github: 'https://github.com/Kkkkkkyle7/blog',
-    email: 'mailto:kkyleyu7@gmail.com',
-    twitter: 'https://github.com/stelcodes/multiterm-astro',
+    email: 'kkyleyu7@gmail.com',
     rss: true, // Set to true to include an RSS feed link in the footer
   },
   // Configuration for Giscus comments.
@@ -163,13 +162,7 @@ const config: SiteConfig = {
   // Take the values from the generated script tag at https://giscus.app and fill them in here.
   // IMPORTANT: Update giscus.json in the root of the project with your own website URL
   // If you don't want to use Giscus, set this to undefined.
-  giscus: {
-    repo: 'stelcodes/multiterm-astro',
-    repoId: 'R_kgDOPNnBig',
-    category: 'Giscus',
-    categoryId: 'DIC_kwDOPNnBis4CteOc',
-    reactionsEnabled: true, // Enable reactions on post itself
-  },
+  giscus: undefined,
   // These are characters available for the character chat feature.
   // To add your own character, add an image file to the top-level `/public` directory
   // Make sure to compress the image to a web-friendly size (<100kb)

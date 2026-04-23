@@ -12,6 +12,11 @@ interface Props {
 }
 
 const { socialLinks } = Astro.props
+const emailHref = socialLinks.email?.startsWith('mailto:')
+  ? socialLinks.email
+  : socialLinks.email
+    ? `mailto:${socialLinks.email}`
+    : undefined
 ---
 
 <div class="flex w-full max-w-md items-center justify-between">
@@ -68,9 +73,9 @@ const { socialLinks } = Astro.props
     )
   }
   {
-    socialLinks.email && (
+    emailHref && (
       <a
-        href={`mailto:${socialLinks.email}`}
+        href={emailHref}
         target="_blank"
         rel="noopener noreferrer"
         class="social-link"
