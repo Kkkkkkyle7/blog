@@ -5,7 +5,7 @@ const config: SiteConfig = {
   // Absolute URL to the root of your published site, used for generating links and sitemaps.
   site: 'https://kkkkkkkyle.com',
   // The name of your site, used in the title and for SEO.
-  title: 'Kyle\'s Blog',
+  title: 'Kyle 的强化学习与机器学习博客',
   // The description of your site, used for SEO and RSS feed.
   description:
     'Kyle 的个人博客，记录强化学习、机器学习与编程学习中的笔记和思考。',

@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import GitHubActivityCalendar from '~/components/GitHubActivityCalendar.astro'
+import siteConfig from '~/site.config'
 import type { FrontmatterImage } from '~/types'
 
 interface Props {
@@ -29,6 +30,9 @@ const { avatarImage, githubCalendar } = Astro.props
     }
     <div>
       <div class:list={['m-4 max-w-full prose']}>
+        <h1 class="mb-4 text-[1.9rem] text-heading1 font-semibold leading-tight">
+          {siteConfig.title}
+        </h1>
         <slot />
       </div>
     </div>
